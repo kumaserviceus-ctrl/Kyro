@@ -206,7 +206,7 @@ button{cursor:pointer}
 .mn-ta{width:100%; min-height:110px; background:var(--panel); color:var(--fg); border:1px solid var(--line); border-radius:8px; padding:8px; font:12px/1.4 ui-monospace,Menlo,monospace}
 </style>
 
-<div id="splash" role="status" aria-live="polite"><svg class="kyro-emblem" viewBox="0 0 100 100" fill="none"> <defs> <linearGradient id="kGrad" x1="0%" y1="0%" x2="100%" y2="100%"> <stop offset="0%" stop-color="#34d399" /> <!-- สีเซียน/แสงเขียว --> <stop offset="50%" stop-color="#38bdf8" /> <!-- สีเทคฯ/ไซเบอร์ --> <stop offset="100%" stop-color="#fbbf24" /> <!-- สีลัทธิ/พระเจ้า --> </linearGradient> </defs> <!-- วงแหวนโชคชะตาหมุนรอบนอก --> <g class="kyro-ring"> <circle cx="50" cy="50" r="44" stroke="url(#kGrad)" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.7"/> <polygon points="50,2 53,8 47,8" fill="#34d399"/> <polygon points="50,98 53,92 47,92" fill="#fbbf24"/> </g> <!-- กรอบแปดเหลี่ยมมิติเวลา --> <polygon points="50,10 80,22 90,50 80,78 50,90 20,78 10,50 20,22" stroke="url(#kGrad)" stroke-width="2.5" fill="rgba(15,23,42,0.7)"/> <!-- แกนนาฬิกาทราย & อักษร K ซ่อนในลายเส้น --> <path d="M32,26 L68,26 L50,50 L68,74 L32,74 L50,50 Z" stroke="#e2e8f0" stroke-width="2" fill="url(#kGrad)" fill-opacity="0.25"/> <!-- ดวงตา/แก่นพลังงานตรงกลาง --> <circle cx="50" cy="50" r="5" fill="#fff" /> </svg><div class="kyro-title">KYRO</div><div class="kyro-sub">สองร้อยปีฝืนชะตา · 200 YEARS BEYOND</div><div class="sbar"><i></i></div><div class="tip" id="splashTip">กำลังโหลดเรื่องราวของคุณ</div></div>
+<div id="splash" role="status" aria-live="polite"><svg class="kyro-emblem" viewBox="0 0 100 100" fill="none"> <defs> <linearGradient id="kGrad" x1="0%" y1="0%" x2="100%" y2="100%"> <stop offset="0%" stop-color="#34d399" /> <!-- สีเซียน/แสงเขียว --> <stop offset="50%" stop-color="#38bdf8" /> <!-- สีเทคฯ/ไซเบอร์ --> <stop offset="100%" stop-color="#fbbf24" /> <!-- สีลัทธิ/พระเจ้า --> </linearGradient> </defs> <!-- วงแหวนโชคชะตาหมุนรอบนอก --> <g class="kyro-ring"> <circle cx="50" cy="50" r="44" stroke="url(#kGrad)" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.7"/> <polygon points="50,2 53,8 47,8" fill="#34d399"/> <polygon points="50,98 53,92 47,92" fill="#fbbf24"/> </g> <!-- กรอบแปดเหลี่ยมมิติเวลา --> <polygon points="50,10 80,22 90,50 80,78 50,90 20,78 10,50 20,22" stroke="url(#kGrad)" stroke-width="2.5" fill="rgba(15,23,42,0.7)"/> <!-- แกนนาฬิกาทราย & อักษร K ซ่อนในลายเส้น --> <path d="M32,26 L68,26 L50,50 L68,74 L32,74 L50,50 Z" stroke="#e2e8f0" stroke-width="2" fill="url(#kGrad)" fill-opacity="0.25"/> <!-- ดวงตา/แก่นพลังงานตรงกลาง --> <circle cx="50" cy="50" r="5" fill="#fff" /> </svg><div class="kyro-title">KYRO</div><div class="kyro-sub">ฝืนชะตานิรันดร์ · ENDLESS CHRONICLES</div><div class="sbar"><i></i></div><div class="tip" id="splashTip">กำลังโหลดเรื่องราวของคุณ</div></div>
 <div id="app">
   <header class="top">
     <div class="brand"><h1>KYRO</h1><p id="phaseLabel"></p></div>
@@ -2411,7 +2411,7 @@ function advance(){
   fixMode();
   if(S.phase === 'post' && S.m - S.dm >= SURVIVE){
     eraEndCheck(); if(S.over || S.pending) { afterChange(); return; }
-    if(S.path){ transStep(); if(!S.over && S.stats.body > 0) yearSummary(); } else { eraStep(); if(!S.over && S.stats.body > 0 && S.m % 12 === 0) yearSummary(); } afterChange(); return;
+    if(S.path){ transStep(); if(!S.over && S.stats.body > 0 && S.m % 12 === 0) yearSummary(); } else { eraStep(); if(!S.over && S.stats.body > 0 && S.m % 12 === 0) yearSummary(); } afterChange(); return;
   }
   if(S.phase === 'pre'){ if(S.m < ADULT_M) modeChild(); else modePre(); } else modePost();
   S.m++;
@@ -2589,7 +2589,7 @@ const DIS = {
   heart:{n:'โรคหัวใจ', age:40, base:.005, grow:.08, drain:1.4, tf:.35, cost:1800, med:1.5},
   cancer:{n:'มะเร็ง', age:35, base:.002, grow:.06, drain:1.9, tf:.4, cost:6000, med:3},
   arthritis:{n:'ข้อเสื่อม', age:50, base:.02, grow:.06, drain:.5, tf:.6, cost:400, med:.7},
-  dementia:{n:'ความจำเสื่อม', age:70, base:.015, grow:.10, drain:.8, tf:.75, cost:1200, med:1},
+  dementia:{n:'ความจำเสื่อม', age:85, base:.015, grow:.10, drain:.8, tf:.75, cost:1200, med:1},
   lung:{n:'โรคปอด', age:40, base:0, grow:.05, drain:1.4, tf:.6, cost:1000, med:1},
   depress:{n:'ภาวะซึมเศร้า', age:15, base:.01, grow:0, drain:0, tf:.4, cost:700, med:.5},
   injury:{n:'บาดเจ็บเรื้อรัง', age:12, base:.01, grow:0, drain:.4, tf:.5, cost:500, med:.5}
@@ -2601,7 +2601,7 @@ const hcond = () => S.cond || (S.cond = {});
 function healthRisk(id, a){
   const d = DIS[id], f = S.flags, c = hcond(), st = S.stats, post = S.phase === 'post';
   if(a < d.age) return 0;
-  if((id === 'cancer' || id === 'heart' || id === 'dementia') && a < 70) return 0;
+  if((id === 'cancer' || id === 'heart' || id === 'dementia') && a < 85) return 0;
   const wm = Object.keys(S.worldMs || {}).length;
   let p = d.base * (1 + (a - d.age) * d.grow);
   if(id === 'diabetes'){ if(f.junk) p *= 1.8; if(f.fit) p *= .6; if(f.smoker) p *= 1.2; }
@@ -2615,6 +2615,7 @@ function healthRisk(id, a){
   else if(id === 'injury'){ p = post ? (f.fa_hawk || S.mode === 'scav' ? .05 : .025) : .008; if(S.job && S.job.id === 'guard') p *= 2.2; }
   if(S.role === 'medic') p *= .5;
   p *= 1 - wm * .08;
+  if((id === 'cancer' || id === 'heart' || id === 'dementia') && (townHas('clinic') || S.skills.aid >= 3)) p *= .3;
   if(trackOn()) p *= (S.realm || 0) >= 1 ? .4 : .6;
   if(S.job && S.job.id === 'coder' && (id === 'diabetes' || id === 'hyper')) p *= 1.3;
   if(S.job && S.job.id === 'farm' && id === 'arthritis') p *= 1.3;
@@ -2655,11 +2656,11 @@ function healthTick(dt){
     if((id === 'depress' || id === 'injury') && Math.random() < ((paid ? .25 : .08) + (id === 'depress' && st.spirit > 60 ? .15 : 0)) * yr){
       delete cond[id]; if(c.dx) addLog('อาการ' + d.n + 'ของคุณค่อยๆ หายไป', null, 'good'); }
   }
-  gain('body', -Math.max(0, a - 45) * .05 * yr * (trackOn() ? ((S.realm || 0) >= 1 ? .4 : .7) : 1));
+  gain('body', -(a < 85 ? (a > 50 ? 1 : 0) : Math.max(0, a - 45) * .05) * yr * (trackOn() ? ((S.realm || 0) >= 1 ? .4 : .7) : 1));
   const cap = bodyCap(); if(st.body > cap) st.body = cap;
   if(st.body <= 0 && !S.cause && maxId) S.cause = maxId;
-  if(a >= 65 && st.body > 0){
-    let h = Math.min(.07, .0004 * Math.pow(a - 65, 1.6)); if(f.fit) h *= .8;
+  if(a >= 85 && st.body > 0){
+    let h = Math.min(.07, .0004 * Math.pow(a - 75, 1.6)); if(f.fit) h *= .8;
     const unt = Object.values(cond).filter(c => !(c.dx && c.paid)).length; h *= 1 + unt * .12;
     if(post && (townHas('clinic') || sk.aid >= 5)) h *= .45; if(post && S.meds > 5) h *= .85;
     h *= st.body > 65 ? .6 : st.body < 35 ? 1.5 : 1; if(st.spirit < 25) h *= 1.25; if(post && S.supplies < 20) h *= 1.4;
@@ -3052,7 +3053,7 @@ document.addEventListener('keydown', e => {
 });
 
 /* ---------- Heirs: the story continues when you die before your time (v28) ---------- */
-const HEIR_MAX_GEN = 3;
+const HEIR_MAX_GEN = 9999;
 function heirOK(){ return !!(S.over && S.over.type === 'dead' && (S.gen || 1) < HEIR_MAX_GEN && age() >= 18 && age() <= 85 && !S.flags.ascend && !S.path); }
 function heirAge(){ return Math.max(18, Math.min(40, age() - 26)); }
 function heirText(){
@@ -3346,8 +3347,8 @@ renderLife = function(p){
   const b = el('div', 'card-block'); b.appendChild(el('h3', '', TRK[T].title));
   const r = realmOf(), q = Math.floor(S.qi || 0);
   const kv = (k, v) => { const d = el('dl', 'kv'); d.appendChild(el('dt', '', k)); d.appendChild(el('dd', '', v)); b.appendChild(d); };
-  kv('ขั้น', TRK[T].realms[r]); kv(TRK[T].unit + 'สะสม', q + (r < 3 ? ' / ' + QI_NEED[r + 1] : ''));
-  b.appendChild(el('p', 'note', r < 3 ? TRK[T].hint : 'ถึงขั้นสูงสุดแล้ว สิ่งที่สะสมไว้จะส่งต่อสู่เส้นทางหลังอายุ 100'));
+  kv('ขั้น', TRK[T].realms[r]); kv(TRK[T].unit + 'สะสม', q + ' / ' + qiNeed(r + 1));
+  b.appendChild(el('p', 'note', r < 3 ? TRK[T].hint : 'ขั้นนี้สะสมต่อเรื่อยๆ ระบบจะทะลวงขั้นให้เองเมื่อพร้อม (ทุก 12 เดือน เสี่ยงล้มเหลว 15%) ยิ่งขั้นสูงยิ่งได้โบนัสรายเดือน ตั้งแต่ขั้น 4 ไม่แก่ตายอีก'));
   if(S.flags.sect) kv('สำนัก', 'ก่อตั้งแล้ว'); if(S.flags.lab) kv('ศูนย์วิจัย', 'เดินเครื่องแล้ว'); if(S.flags.temple) kv('วิหาร', 'ก่อตั้งแล้ว');
   p.appendChild(b);
 };
@@ -3633,13 +3634,14 @@ const _rl42 = renderLife;
 renderLife = function(p){ blessCard(p); _rl42(p); };
 function secondWind(){
   if(S.cause === 'aging' || S.cause === 'transcend' || S.flags.ascend) return;
+  if(S.guardUntil !== undefined && S.m < S.guardUntil){ if(S.stats.body <= 0){ S.stats.body = 25; S.cause = ''; } return; }
   if(S.sw !== undefined && S.m - S.sw < 12) return;
   const r = S.realm || 0;
   if(S.meds >= 1){ S.meds -= 1; addLog('ร่างกายคุณทรุดลง แต่ยาที่สำรองไว้ช่วยดึงคุณกลับมาได้ทัน', null, 'good'); }
   else if(S.supplies >= 15){ S.supplies -= 15; addLog('คุณล้มลงจนมองไม่เห็นอะไร แต่เสบียงที่เก็บไว้ทำให้คุณฟื้นได้ในเช้าวันถัดไป', null, 'good'); }
   else if(trackOn() && r >= 1){ S.qi = Math.max(0, (S.qi || 0) - 40); addLog('ปราณที่ฝึกมาทั้งหมดไหลกลับเข้าตัวในจังหวะสุดท้าย คุณลืมตาอีกครั้ง', null, 'good'); }
   else return;
-  S.sw = S.m; S.stats.body = 35; S.cause = '';
+  S.sw = S.m; S.stats.body = 50; S.guardUntil = S.m + 12; S.cause = '';
 }
 /* tribulation odds 80-95% */
 Object.keys(ALL).forEach(id => { if(id.indexOf('trib') < 0) return; const e = ALL[id]; (e.ch || []).forEach(c => { if(typeof c.p === 'function'){ const f = c.p; c.p = s => Math.min(.95, Math.max(.8, f(s) + .5)); } }); });
@@ -3761,7 +3763,7 @@ function renderClock(){
   const bar = el('div', 'bar'), fill = el('i'); bar.appendChild(fill);
   if(S.phase === 'post'){
     const n = S.m - S.dm;
-    if(n >= SURVIVE){ const goal = S.path ? FINAL_AGE : MAX_AGE; big.textContent = 'อายุ ' + age() + ' ปี'; sub.textContent = S.path ? 'ก้าวข้ามขีดจำกัดของมนุษย์ · เป้าหมาย ' + goal + ' ปี · เวลาเดินทีละ 5 ปี' : 'เป้าหมาย: ใช้ชีวิตในโลกใหม่ให้ถึง ' + goal + ' ปี'; bar.classList.add('good'); fill.style.width = clamp(S.m / 12 / goal * 100, 0, 100) + '%'; }
+    if(n >= SURVIVE){ const goal = S.path ? FINAL_AGE : MAX_AGE; big.textContent = 'อายุ ' + age() + ' ปี'; sub.textContent = S.path ? 'ก้าวข้ามขีดจำกัดของมนุษย์ · ไม่มีวันจบ กด จารึกตำนาน ในแท็บชีวิตเมื่อพอใจ' : 'เป้าหมาย: ใช้ชีวิตในโลกใหม่ให้ถึง ' + goal + ' ปี'; bar.classList.add('good'); fill.style.width = clamp(S.m / 12 / (S.path ? 200 : goal) * 100, 0, 100) + '%'; }
     else { big.textContent = 'หลังวันนั้น ' + n + ' เดือน'; sub.textContent = 'เป้าหมายตอนนี้: รอดให้ครบ ' + SURVIVE + ' เดือน';
     bar.classList.add('good'); fill.style.width = clamp(n / SURVIVE * 100, 0, 100) + '%'; }
   } else if(S.announced){
@@ -3801,12 +3803,12 @@ function renderModes(){
   set.forEach(([id, label]) => {
     const b = el('button', 'chip', label); b.type = 'button'; if(set.length === 1) b.disabled = true;
     b.setAttribute('aria-pressed', S.mode === id ? 'true' : 'false');
-    b.addEventListener('click', () => { S.mode = id; save(); renderModes(); });
+    b.addEventListener('click', () => { const ch = S.mode !== id; S.mode = id; save(); renderModes(); if(ch) instantAct(); });
     box.appendChild(b);
   });
   if(S.mode === 'part'){ const sel = el('select', ''); sel.style.cssText = 'margin:8px 0;width:100%;padding:8px;border-radius:8px';
     PT.filter(ptOK).forEach(j => { const o = el('option', '', j.n + ' · ' + fmtMoney(j.pay * getC().inc) + '/เดือน'); o.value = j.id; if(ptCur().id === j.id) o.selected = true; sel.appendChild(o); });
-    sel.addEventListener('change', () => { S.pt = sel.value; save(); renderModes(); }); sel.style.flex = '1'; sel.style.margin = '0';
+    sel.addEventListener('change', () => { S.pt = sel.value; save(); renderModes(); instantAct(); }); sel.style.flex = '1'; sel.style.margin = '0';
     const wr = el('div', ''); wr.style.cssText = 'display:flex;gap:8px;align-items:center;width:100%;margin:8px 0'; wr.appendChild(ico2(ptCur().id, 44)); wr.appendChild(sel); box.appendChild(wr); }
   $('modeHint').textContent = MODE_HINT[S.mode] || '';
   $('skillRow').hidden = S.mode !== 'learn' && S.mode !== 'work';
@@ -3960,9 +3962,9 @@ function drawScene(t){
 
 /* ---------- Wiring ---------- */
 $('btnPlay').addEventListener('click', () => { if(S.over) return; S.paused = !S.paused; save(); renderTop(); loop(); });
-$('btnSpeed').addEventListener('click', () => { const sp = [1, 2, 4, 8]; S.speed = sp[(sp.indexOf(S.speed) + 1) % sp.length]; save(); renderTop(); loop(); });
+$('btnSpeed').addEventListener('click', () => { const sp = [1, 2, 4, 8, 16]; S.speed = sp[(sp.indexOf(S.speed) + 1) % sp.length]; save(); renderTop(); loop(); });
 $('btnStep').addEventListener('click', advance);
-$('skillSel').addEventListener('change', e => { S.skillFocus = e.target.value; save(); });
+$('skillSel').addEventListener('change', e => { S.skillFocus = e.target.value; save(); instantAct(); });
 document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => { S.tab = t.dataset.tab; renderPanel(); }));
 
 if(!load()){ S = newState(); S.roll = rollBirth(); }
@@ -4408,6 +4410,178 @@ const sbtn = el('button', 'btn', SND.on ? '🔊' : '🔇'); sbtn.type = 'button'
 sbtn.addEventListener('click', () => { sndToggle(); });
 function sndBtnSync(){ sbtn.textContent = SND.on ? '🔊' : '🔇'; }
 $('btnStep').after(sbtn);
+/* ---------- v48: endless mode (monthly time, infinite realms, town levels, expeditions, legend button) ---------- */
+QI_NEED.push(600, 1000, 1600, 2500, 4000);
+function qiNeed(n){ while(QI_NEED.length <= n) QI_NEED.push(Math.round(QI_NEED[QI_NEED.length - 1] * 1.6)); return QI_NEED[n]; }
+REALMS.push('แปรเปลี่ยนเทพ', 'รวมสูญ', 'มหายาน', 'เซียนแท้จริง');
+TRK.tech.realms.push('จิตสำนึกดิจิทัล', 'โครงข่ายควอนตัม', 'สถานีวงโคจร', 'อารยธรรมดวงดาว');
+TRK.cult.realms.push('มหาสังฆราช', 'ผู้สร้างปาฏิหาริย์', 'เทวทูตจุติ', 'พระเจ้าองค์ใหม่');
+function ensureRealms(){ const r = realmOf(); for(const k in TRK){ const a = TRK[k].realms; while(a.length <= r) a.push('อนันต์ Lv.' + (a.length - 7)); } }
+/* monthly cultivation beyond the world-level realms */
+function realmMonth(){
+  const T = trackOn(); if(!T || S.phase !== 'post') return;
+  let r = realmOf(); if(r < 3) return; ensureRealms();
+  const k = r - 3;
+  S.qi = (S.qi || 0) + 2 + (r - 2) * 2 + (S.mode === TRK[T].mode ? 5 + r : 0);
+  S.supplies = Math.min(400, S.supplies + k * 2.5); gain('body', .08 * k);
+  if(r >= 6) S.meds = Math.min(60, S.meds + .5);
+  if(r >= 3 && !S.flags.immortal){ S.flags.immortal = 1; addLog('ร่างกายของคุณหยุดแก่ลงอย่างสมบูรณ์ เวลาไม่ใช่ศัตรูอีกต่อไป', null, 'good'); }
+  if(r >= 3 && (S.qi || 0) >= qiNeed(r + 1) && S.m - (S.xLast === undefined ? -99 : S.xLast) >= 12){
+    S.xLast = S.m;
+    if(Math.random() < .85){ S.realm = r + 1; ensureRealms(); gain('spirit', 6); gain('body', 4);
+      addLog('คุณทะลวงสู่ขั้น “' + TRK[T].realms[S.realm] + '” ' + (S.realm >= 8 ? '(ระดับอนันต์)' : ''), null, 'good'); }
+    else { S.qi = Math.round(S.qi * .85); gain('body', -8); gain('spirit', -3); addLog('การทะลวงขั้นล้มเหลว พลังย้อนกลับ คุณต้องพักฟื้นและเริ่มสะสมใหม่', null, 'bad'); }
+  }
+}
+(function(){
+  const _em = eraMonthCore;
+  eraMonthCore = function(){ _em.apply(this, arguments); realmMonth(); };
+})();
+/* time: one month at a time for the transcendence path, no forced end at 200 */
+const TS_NOFORCE = TRANS_SCHEDULE.findIndex(x => x.id === 'final_ascension'); if(TS_NOFORCE >= 0) TRANS_SCHEDULE.splice(TS_NOFORCE, 1);
+function transTickM(){
+  const st = S.stats, F = 1 / 60; let h = .015 * F;
+  if(st.body < 35) h += .03 * F; if(st.spirit < 30) h += .02 * F;
+  if(S.path === 'sci'){ if(!townHas('reactor') && S.supplies < 50) gain('body', -6 * F); else gain('body', 1 * F); }
+  if(S.path === 'awk'){ if(st.spirit < 30){ gain('body', -5 * F); S.pprog = Math.max(0, S.pprog - 10 * F); } else gain('body', 2 * F); }
+  if(S.path === 'god'){ if(S.trust < 30){ S.pprog = Math.max(0, S.pprog - 15 * F); gain('spirit', -4 * F); } else gain('spirit', 1 * F); }
+  if(townHas('worldtree')) h *= .5;
+  
+  if(S.flags.immortal) h = 0;
+  if(st.body > 0 && Math.random() < h){ S.cause = 'transcend'; st.body = 0; }
+}
+transStep = function(){
+  S.snap = snap();
+  eraMonthCore();
+  if(S.stats.body > 0) transTickM();
+  S.m += 1;
+  if(S.m % 12 === 0) townPop(S.supplies);
+  if(S.stats.body > 0){
+    const a = age();
+    for(const it of TRANS_SCHEDULE){
+      if(a >= it.age && !S.used[it.id] && (!it.path || it.path === S.path) && !S.pending){ S.used[it.id] = 1; fire(ALL[it.id]); break; }
+    }
+    if(!S.pending) randomEvent();
+  }
+};
+/* aging stops for immortals (non-path era too) */
+(function(){
+  const _hr = healthRisk;
+  healthRisk = function(id, a){ const p = _hr(id, a); return S.flags.immortal ? 0 : p; };
+})();
+/* town levels */
+const tLv = id => ((town().lv || {})[id] || 1);
+const tLvSum = () => { const t = town(); let s = 0; for(const id in (t.lv || {})) if(t.b[id]) s += t.lv[id] - 1; return s; };
+(function(){
+  const _ty = townYear;
+  townYear = function(){
+    const t = town(), pj = t.proj; const r = _ty.apply(this, arguments);
+    if(pj && pj.up && !t.proj){ t.lv = t.lv || {}; t.lv[pj.id] = (t.lv[pj.id] || 1) + 1; addLog(TB[pj.id].n + ' อัปเกรดเป็น Lv.' + t.lv[pj.id] + ' แล้ว', null, 'good'); }
+    const s = tLvSum(); r.prod += s * 6; r.need -= s * 2;
+    return r;
+  };
+  const _tc = townCap;
+  townCap = function(){ return _tc.apply(this, arguments) + tLvSum() * 15; };
+})();
+const upCost = id => { const L = tLv(id); return Math.min(380, Math.round(bCost(TB[id]) * (1 + L * .6))); };
+function townUpgrade(id){
+  const t = town(), d = TB[id]; if(!d) return; t.lv = t.lv || {};
+  const L = tLv(id), c = upCost(id);
+  if(S.over || S.pending || t.proj || !t.b[id] || L >= 99 || S.supplies < c || S.phase !== 'post') return;
+  S.supplies -= c; t.proj = {id, left:Math.max(1, Math.ceil(d.yrs / 2)), up:true};
+  addLog('ชุมชนเริ่มอัปเกรด' + d.n + ' เป็น Lv.' + (L + 1), null, 'n'); save(); render();
+}
+function expedition(){
+  const t = town(); if(S.over || S.pending || S.phase !== 'post' || S.m - S.dm < SURVIVE) return;
+  if(S.m < (S.expAt || 0) || S.supplies < 40 || t.pop < 8) return;
+  S.supplies -= 40; S.expAt = S.m + 6; S.expN = (S.expN || 0) + 1;
+  const danger = Math.max(8, 36 - S.skills.fight * 2 - (eqOn('shotgun') ? 8 : eqOn('knife') || eqOn('pipe') ? 4 : 0) - S.stats.luck * .1), roll = Math.random() * 100;
+  if(roll < danger){
+    const lost = Math.min(t.pop - 1, 2 + Math.floor(Math.random() * 5)); t.pop -= lost; gain('body', -8); gain('spirit', -3); S.supplies += 5;
+    addLog('ทีมสำรวจเจอสัตว์กลายพันธุ์กลางทาง เสียคนไป ' + lost + ' คน และกลับมาแทบมือเปล่า', null, 'bad');
+  } else {
+    const k = Math.random() * 100;
+    if(k < 35){ const g = Math.round(50 + Math.random() * 70); S.supplies = Math.min(400, S.supplies + g); addLog('ทีมสำรวจพบคลังเสบียงในซากเมืองเก่า ได้เสบียง ' + g, null, 'good'); }
+    else if(k < 60){ S.meds = Math.min(60, S.meds + 6); gain('body', 6); if(trackOn()) S.qi = (S.qi || 0) + 40 + realmOf() * 20;
+      addLog('ทีมสำรวจนำสิ่งที่เหมือนยาอายุวัฒนะกลับมา คุณรู้สึกว่าร่างกายและพลังของคุณเปลี่ยนไป', null, 'good'); }
+    else if(k < 80){ const un = EQ.filter(x => x.ph === 'post' && !(S.eqOwn || {})[x.id]);
+      if(un.length){ const it = un[Math.floor(Math.random() * un.length)]; eqState(); S.eqOwn[it.id] = 1; if(!S.eq[it.slot]) S.eq[it.slot] = it.id; addLog('ทีมสำรวจพบ “' + it.n + '” ในซากอารยธรรม', null, 'good'); }
+      else { S.supplies = Math.min(400, S.supplies + 80); addLog('ทีมสำรวจพบของมีค่ามากมาย แต่ส่วนใหญ่คุณมีอยู่แล้ว จึงนำกลับมาเป็นเสบียง', null, 'good'); } }
+    else if(k < 92){ const ks = ['aid', 'fix', 'farm', 'fight'], q = ks[Math.floor(Math.random() * 4)]; S.skills[q] = Math.min(10, S.skills[q] + .8); gain('mind', 1.5); addLog('ทีมสำรวจพบหอสมุดเก่า และนำตำราที่ยังอ่านออกกลับมาได้หลายเล่ม', null, 'good'); }
+    else { S.fame = clamp(S.fame + 2, 0, 100); gain('spirit', 5); if(S.world !== undefined) S.world = Math.min(100, S.world + 2); addLog('ทีมสำรวจพบสิ่งของจากยุคก่อนวันนั้นที่ทำให้ทั้งชุมชนนิ่งเงียบ แล้วหลายคนก็ร้องไห้', null, 'good'); }
+  }
+  save(); render();
+}
+(function(){
+  const _rt = renderTown;
+  renderTown = function(p){
+    _rt.apply(this, arguments);
+    if(S.phase !== 'post' || S.m - S.dm < SURVIVE) return;
+    const t = town();
+    const eb = el('div', 'card-block'); eb.appendChild(el('h3', '', '🗺️ ทีมสำรวจ'));
+    const cd = Math.max(0, (S.expAt || 0) - S.m);
+    eb.appendChild(el('p', 'note', 'ใช้เสบียง 40 ส่งทีมออกไปหาของในซากเมือง เสี่ยงเสียคน ได้ทั้งเสบียง ยา ของสวมใส่ ตำรา และพลังสะสม พักได้ทุก 6 เดือน (สำรวจมาแล้ว ' + (S.expN || 0) + ' ครั้ง)'));
+    const x = el('button', 'btn', cd ? 'พักอีก ' + cd + ' เดือน' : 'ส่งทีมสำรวจ'); x.type = 'button'; x.disabled = cd > 0 || S.supplies < 40 || t.pop < 8; x.addEventListener('click', expedition); eb.appendChild(x);
+    p.appendChild(eb);
+    const built = Object.keys(TB).filter(id => t.b[id]); if(!built.length) return;
+    const ub = el('div', 'card-block'); ub.appendChild(el('h3', '', '⬆️ อัปเกรดอาคาร'));
+    ub.appendChild(el('p', 'note', 'อัปเกรดเพิ่มผลผลิต ลดเสบียงที่ใช้ และเพิ่มเพดานประชากร ทำได้ไม่จำกัดเลเวล (ทีละอย่าง)'));
+    built.forEach(id => {
+      const r = el('div', 'jr'); r.appendChild(el('div', 'jq', TB[id].n + ' · Lv.' + tLv(id)));
+      const busy = t.proj && t.proj.id === id && t.proj.up;
+      r.appendChild(el('div', 'note', busy ? 'กำลังอัปเกรด' : 'ใช้ ' + upCost(id) + ' เสบียง'));
+      const b = el('button', 'btn', 'อัปเกรด'); b.type = 'button'; b.style.marginTop = '6px'; b.disabled = !!t.proj || S.supplies < upCost(id); b.addEventListener('click', () => townUpgrade(id));
+      r.appendChild(b); ub.appendChild(r);
+    });
+    p.appendChild(ub);
+  };
+})();
+/* legend button: finish this life whenever you want */
+let legendArm = false;
+function legendEnd(){
+  if(S.over || S.pending) return;
+  if(S.path) S.flags.ascend = 1; else S.flags.endnow = 1;
+  legendArm = false; finish('win'); save(); render();
+}
+(function(){
+  const _rl = renderLife;
+  renderLife = function(p){
+    ensureRealms(); _rl.apply(this, arguments);
+    if(S.phase !== 'post' || S.m - S.dm < SURVIVE || S.over) return;
+    if(!(age() >= 65 || (trackOn() && realmOf() >= 2))) return;
+    const b = el('div', 'card-block'); b.appendChild(el('h3', '', '👑 จารึกตำนาน'));
+    b.appendChild(el('p', 'note', 'เมื่อพอใจกับเรื่องราวชีวิตนี้แล้ว กดเพื่อปิดฉากและรับฉากจบกับแต้มชะตา ถ้ายังไม่กด ชีวิตจะดำเนินต่อไปเรื่อยๆ'));
+    const x = el('button', 'btn' + (legendArm ? ' primary' : ''), legendArm ? 'ยืนยัน: ปิดฉากชีวิตนี้' : 'จารึกตำนาน / ปิดฉากชีวิตนี้'); x.type = 'button';
+    x.addEventListener('click', () => { if(!legendArm){ legendArm = true; render(); } else legendEnd(); });
+    b.appendChild(x); p.appendChild(b);
+  };
+})();
+/* ---------- v49: gentler aging, regeneration, ageless at realm 4 ---------- */
+(function(){
+  const _ht = healthTick;
+  healthTick = function(dt){
+    const r = _ht.apply(this, arguments);
+    if(S.over || S.stats.body <= 0) return r;
+    const T = trackOn(), re = realmOf();
+    if(T && re >= 3 && !S.flags.immortal){ S.flags.immortal = 1; addLog('ร่างกายของคุณหยุดแก่ลงอย่างสมบูรณ์ เวลาไม่ใช่ศัตรูอีกต่อไป', null, 'good'); }
+    if(T && re >= 1) gain('body', 2 * dt);
+    else if(S.phase === 'post' && (townHas('clinic') || (S.world || 0) > 25)) gain('body', 2 * dt);
+    return r;
+  };
+})();
+/* ---------- v50: instant action (hybrid) ---------- */
+let _iaT = 0;
+function instantAct(){
+  const now = performance.now(); if(now - _iaT < 600) return;
+  if(S.over || S.pending || !S.born) return;
+  _iaT = now;
+  const m0 = S.m; advance();
+  if(S.over || S.pending || S.m === m0) return;
+  if(Math.random() < .5){
+    const pool = Object.keys(ALL).filter(id => /^c_act_/.test(id) && ALL[id].when && (()=>{ try{ return ALL[id].when(S); }catch(e){ return false; } })() && !(S.lastFire && S.lastFire[id] !== undefined && S.m - S.lastFire[id] < 10));
+    if(pool.length){ fire(ALL[pool[Math.floor(Math.random() * pool.length)]]); }
+  }
+}
 /* v44: splash screen (hide once the game has booted) */
 (function(){
   const sp = document.getElementById('splash'); if(!sp) return;
